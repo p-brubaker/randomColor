@@ -1,28 +1,50 @@
 {
-  "name": "randomColor",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
-  "jest": {
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-dom/extend-expect",
-      "<rootDir>/src/setupTests.js"
-    ],
-    "moduleNameMapper": {
-      "\\.(css)$": "identity-obj-proxy",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
+    "name": "randomColor",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "type": "module",
+    "jest": {
+        "setupFilesAfterEnv": [
+            "@testing-library/jest-dom/extend-expect",
+            "<rootDir>/src/setupTests.js"
+        ],
+        "moduleNameMapper": {
+            "\\.(css)$": "identity-obj-proxy",
+            "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
+        },
+        "testEnvironment": "jsdom"
     },
-    "testEnvironment": "jsdom"
-  },
-  "scripts": {
-    "test": "jest --verbose",
-    "test:watch": "npm run test -- --watch",
-    "start": "webpack serve --hot --mode development --devtool eval-source-map",
-    "build": "webpack --devtool source-map"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {}
+    "scripts": {
+        "test": "jest --verbose",
+        "test:watch": "npm run test -- --watch",
+        "start": "webpack serve --hot --mode development --devtool eval-source-map",
+        "build": "webpack --devtool source-map"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/plugin-proposal-class-properties": "^7.16.0",
+        "@babel/plugin-transform-runtime": "^7.16.0",
+        "@babel/preset-env": "^7.16.0",
+        "@babel/preset-react": "^7.16.0",
+        "autoprefixer": "^10.4.0",
+        "babel-loader": "^8.2.3",
+        "clean-webpack-plugin": "^4.0.0",
+        "copy-webpack-plugin": "^9.0.1",
+        "css-loader": "^6.5.0",
+        "dotenv": "^10.0.0",
+        "html-webpack-plugin": "^5.5.0",
+        "postcss-import": "^14.0.2",
+        "postcss-loader": "^6.2.0",
+        "postcss-nested": "^5.0.6",
+        "react-dom": "^17.0.2",
+        "style-loader": "^3.3.1",
+        "webpack": "^5.61.0"
+    },
+    "devDependencies": {
+        "webpack-cli": "^4.9.1",
+        "webpack-dev-server": "^4.4.0"
+    }
 }
